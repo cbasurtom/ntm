@@ -1,0 +1,92 @@
+NTM a*b*c* Nondeterministic:
+  States: ['q1', 'q2', 'q3', 'q4', 'qacc', 'qrej']
+  Input Alphabet: ['a', 'b', 'c']
+  Tape Alphabet: ['a', 'b', 'c', '_']
+  Starting State: q0
+  Accept State: qacc
+  Reject State: qrej
+  Transition Table: [['q0', 'a', 'q0', 'a', 'R'], ['q0', 'a', 'q1', 'a', 'R'], ['q0', 'a', 'q2', 'a', 'R'], ['q0', 'a', 'q3', 'a', 'R'], ['q1', 'b', 'q1', 'b', 'R'], ['q1', 'b', 'q2', 'b', 'R'], ['q1', 'b', 'q3', 'b', 'R'], ['q2', 'c', 'q2', 'c', 'R'], ['q2', 'c', 'q3', 'c', 'R'], ['q3', '_', 'qacc', '_', 'R'], ['q0', 'b', 'q1', 'b', 'R'], ['q0', 'b', 'q2', 'b', 'R'], ['q0', 'b', 'q3', 'b', 'R'], ['q0', 'c', 'q2', 'c', 'R'], ['q0', 'c', 'q3', 'c', 'R'], ['q0', '_', 'q3', '_', 'R']]
+
+Running a*b*c* Nondeterministic on string 
+| , q0, _ 
+| _, q3, _ 
+| __, qacc, _ 
+String  accepted in 2 transitions with a nondeterminism of: 1
+
+Running a*b*c* Nondeterministic on string a
+| , q0, a_ 
+| a, q0, _ | a, q1, _ | a, q2, _ | a, q3, _ 
+| a_, qacc, _ | a_, q3, _ 
+| a__, qacc, _ 
+String a accepted in 3 transitions with a nondeterminism of: 2.3333333333333335
+
+Running a*b*c* Nondeterministic on string b
+| , q0, b_ 
+| b, q1, _ | b, q2, _ | b, q3, _ 
+| b_, qacc, _ 
+String b accepted in 2 transitions with a nondeterminism of: 2
+
+Running a*b*c* Nondeterministic on string c
+| , q0, c_ 
+| c, q2, _ | c, q3, _ 
+| c_, qacc, _ 
+String c accepted in 2 transitions with a nondeterminism of: 1.5
+
+Running a*b*c* Nondeterministic on string abc
+| , q0, abc_ 
+| a, q0, bc_ | a, q1, bc_ | a, q2, bc_ | a, q3, bc_ 
+| ab, q1, c_ | ab, q2, c_ | ab, q3, c_ | ab, q1, c_ | ab, q2, c_ | ab, q3, c_ 
+| abc, q2, _ | abc, q3, _ | abc, q2, _ | abc, q3, _ 
+| abc_, qacc, _ | abc_, qacc, _ 
+String abc accepted in 4 transitions with a nondeterminism of: 3.75
+
+Running a*b*c* Nondeterministic on string aabbbbccc
+| , q0, aabbbbccc_ 
+| a, q0, abbbbccc_ | a, q1, abbbbccc_ | a, q2, abbbbccc_ | a, q3, abbbbccc_ 
+| aa, q0, bbbbccc_ | aa, q1, bbbbccc_ | aa, q2, bbbbccc_ | aa, q3, bbbbccc_ 
+| aab, q1, bbbccc_ | aab, q2, bbbccc_ | aab, q3, bbbccc_ | aab, q1, bbbccc_ | aab, q2, bbbccc_ | aab, q3, bbbccc_ 
+| aabb, q1, bbccc_ | aabb, q2, bbccc_ | aabb, q3, bbccc_ | aabb, q1, bbccc_ | aabb, q2, bbccc_ | aabb, q3, bbccc_ 
+| aabbb, q1, bccc_ | aabbb, q2, bccc_ | aabbb, q3, bccc_ | aabbb, q1, bccc_ | aabbb, q2, bccc_ | aabbb, q3, bccc_ 
+| aabbbb, q1, ccc_ | aabbbb, q2, ccc_ | aabbbb, q3, ccc_ | aabbbb, q1, ccc_ | aabbbb, q2, ccc_ | aabbbb, q3, ccc_ 
+| aabbbbc, q2, cc_ | aabbbbc, q3, cc_ | aabbbbc, q2, cc_ | aabbbbc, q3, cc_ 
+| aabbbbcc, q2, c_ | aabbbbcc, q3, c_ | aabbbbcc, q2, c_ | aabbbbcc, q3, c_ 
+| aabbbbccc, q2, _ | aabbbbccc, q3, _ | aabbbbccc, q2, _ | aabbbbccc, q3, _ 
+| aabbbbccc_, qacc, _ | aabbbbccc_, qacc, _ 
+String aabbbbccc accepted in 10 transitions with a nondeterminism of: 4.5
+
+Running a*b*c* Nondeterministic on string cab
+| , q0, cab_ 
+| c, q2, ab_ | c, q3, ab_ 
+String cab rejected in 1 transitions with a nondeterminism of: 1
+
+Running a*b*c* Nondeterministic on string bbcccca
+| , q0, bbcccca_ 
+| b, q1, bcccca_ | b, q2, bcccca_ | b, q3, bcccca_ 
+| bb, q1, cccca_ | bb, q2, cccca_ | bb, q3, cccca_ 
+| bbc, q2, ccca_ | bbc, q3, ccca_ 
+| bbcc, q2, cca_ | bbcc, q3, cca_ 
+| bbccc, q2, ca_ | bbccc, q3, ca_ 
+| bbcccc, q2, a_ | bbcccc, q3, a_ 
+String bbcccca rejected in 6 transitions with a nondeterminism of: 2.1666666666666665
+
+Running a*b*c* Nondeterministic on string acb
+| , q0, acb_ 
+| a, q0, cb_ | a, q1, cb_ | a, q2, cb_ | a, q3, cb_ 
+| ac, q2, b_ | ac, q3, b_ | ac, q2, b_ | ac, q3, b_ 
+String acb rejected in 2 transitions with a nondeterminism of: 2.5
+
+Running a*b*c* Nondeterministic on string aaaaaaaaaaaaaaaaaaaa
+| , q0, aaaaaaaaaaaaaaaaaaaa_ 
+| a, q0, aaaaaaaaaaaaaaaaaaa_ | a, q1, aaaaaaaaaaaaaaaaaaa_ | a, q2, aaaaaaaaaaaaaaaaaaa_ | a, q3, aaaaaaaaaaaaaaaaaaa_ 
+| aa, q0, aaaaaaaaaaaaaaaaaa_ | aa, q1, aaaaaaaaaaaaaaaaaa_ | aa, q2, aaaaaaaaaaaaaaaaaa_ | aa, q3, aaaaaaaaaaaaaaaaaa_ 
+| aaa, q0, aaaaaaaaaaaaaaaaa_ | aaa, q1, aaaaaaaaaaaaaaaaa_ | aaa, q2, aaaaaaaaaaaaaaaaa_ | aaa, q3, aaaaaaaaaaaaaaaaa_ 
+| aaaa, q0, aaaaaaaaaaaaaaaa_ | aaaa, q1, aaaaaaaaaaaaaaaa_ | aaaa, q2, aaaaaaaaaaaaaaaa_ | aaaa, q3, aaaaaaaaaaaaaaaa_ 
+| aaaaa, q0, aaaaaaaaaaaaaaa_ | aaaaa, q1, aaaaaaaaaaaaaaa_ | aaaaa, q2, aaaaaaaaaaaaaaa_ | aaaaa, q3, aaaaaaaaaaaaaaa_ 
+| aaaaaa, q0, aaaaaaaaaaaaaa_ | aaaaaa, q1, aaaaaaaaaaaaaa_ | aaaaaa, q2, aaaaaaaaaaaaaa_ | aaaaaa, q3, aaaaaaaaaaaaaa_ 
+| aaaaaaa, q0, aaaaaaaaaaaaa_ | aaaaaaa, q1, aaaaaaaaaaaaa_ | aaaaaaa, q2, aaaaaaaaaaaaa_ | aaaaaaa, q3, aaaaaaaaaaaaa_ 
+| aaaaaaaa, q0, aaaaaaaaaaaa_ | aaaaaaaa, q1, aaaaaaaaaaaa_ | aaaaaaaa, q2, aaaaaaaaaaaa_ | aaaaaaaa, q3, aaaaaaaaaaaa_ 
+| aaaaaaaaa, q0, aaaaaaaaaaa_ | aaaaaaaaa, q1, aaaaaaaaaaa_ | aaaaaaaaa, q2, aaaaaaaaaaa_ | aaaaaaaaa, q3, aaaaaaaaaaa_ 
+| aaaaaaaaaa, q0, aaaaaaaaaa_ | aaaaaaaaaa, q1, aaaaaaaaaa_ | aaaaaaaaaa, q2, aaaaaaaaaa_ | aaaaaaaaaa, q3, aaaaaaaaaa_ 
+Depth limit exceeded
+String aaaaaaaaaaaaaaaaaaaa rejected in 10 transitions with a nondeterminism of: 3.7
+
