@@ -1,0 +1,66 @@
+NTM a plus:
+  States: ['q1', 'q2', 'q3', ' qreject']
+  Input Alphabet: ['a']
+  Tape Alphabet: ['a', '_']
+  Starting State: q1
+  Accept State: q3
+  Reject State: qreject
+  Transition Table: [['q1', 'a', 'q1', 'a', 'R'], ['q1', 'a', 'q2', 'a', 'R'], ['q1', '_', 'qreject', '_', 'R'], ['q2', '_', 'q3', '_', 'R'], ['q2', 'a', 'qreject', 'a', 'R']]
+
+Running a plus on string 
+| , q1, _ 
+| _, qreject, _ 
+String  rejected in 1 transitions with a nondeterminism of: 1
+
+Running a plus on string a
+| , q1, a_ 
+| a, q1, _ | a, q2, _ 
+| a_, q3, _ | a_, qreject, _ 
+String a accepted in 2 transitions with a nondeterminism of: 1.5
+
+Running a plus on string aa
+| , q1, aa_ 
+| a, q1, a_ | a, q2, a_ 
+| aa, qreject, _ | aa, q1, _ | aa, q2, _ 
+| aa_, q3, _ | aa_, qreject, _ 
+String aa accepted in 3 transitions with a nondeterminism of: 2
+
+Running a plus on string aaa
+| , q1, aaa_ 
+| a, q1, aa_ | a, q2, aa_ 
+| aa, qreject, a_ | aa, q1, a_ | aa, q2, a_ 
+| aaa, qreject, _ | aaa, q1, _ | aaa, q2, _ 
+| aaa_, q3, _ | aaa_, qreject, _ 
+String aaa accepted in 4 transitions with a nondeterminism of: 2.25
+
+Running a plus on string aba
+| , q1, aba_ 
+| a, q1, ba_ | a, q2, ba_ 
+String aba rejected in 1 transitions with a nondeterminism of: 1
+
+Running a plus on string bba
+| , q1, bba_ 
+String bba rejected in 0 transitions with a nondeterminism of: 1
+
+Running a plus on string aaab
+| , q1, aaab_ 
+| a, q1, aab_ | a, q2, aab_ 
+| aa, qreject, ab_ | aa, q1, ab_ | aa, q2, ab_ 
+| aaa, qreject, b_ | aaa, q1, b_ | aaa, q2, b_ 
+String aaab rejected in 3 transitions with a nondeterminism of: 2
+
+Running a plus on string aaaaaaaaaaaaaa
+| , q1, aaaaaaaaaaaaaa_ 
+| a, q1, aaaaaaaaaaaaa_ | a, q2, aaaaaaaaaaaaa_ 
+| aa, qreject, aaaaaaaaaaaa_ | aa, q1, aaaaaaaaaaaa_ | aa, q2, aaaaaaaaaaaa_ 
+| aaa, qreject, aaaaaaaaaaa_ | aaa, q1, aaaaaaaaaaa_ | aaa, q2, aaaaaaaaaaa_ 
+| aaaa, qreject, aaaaaaaaaa_ | aaaa, q1, aaaaaaaaaa_ | aaaa, q2, aaaaaaaaaa_ 
+| aaaaa, qreject, aaaaaaaaa_ | aaaaa, q1, aaaaaaaaa_ | aaaaa, q2, aaaaaaaaa_ 
+| aaaaaa, qreject, aaaaaaaa_ | aaaaaa, q1, aaaaaaaa_ | aaaaaa, q2, aaaaaaaa_ 
+| aaaaaaa, qreject, aaaaaaa_ | aaaaaaa, q1, aaaaaaa_ | aaaaaaa, q2, aaaaaaa_ 
+| aaaaaaaa, qreject, aaaaaa_ | aaaaaaaa, q1, aaaaaa_ | aaaaaaaa, q2, aaaaaa_ 
+| aaaaaaaaa, qreject, aaaaa_ | aaaaaaaaa, q1, aaaaa_ | aaaaaaaaa, q2, aaaaa_ 
+| aaaaaaaaaa, qreject, aaaa_ | aaaaaaaaaa, q1, aaaa_ | aaaaaaaaaa, q2, aaaa_ 
+Depth limit exceeded
+String aaaaaaaaaaaaaa rejected in 10 transitions with a nondeterminism of: 2.7
+
