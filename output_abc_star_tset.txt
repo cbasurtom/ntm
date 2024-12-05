@@ -57,7 +57,7 @@ String aabbbbccc accepted in 10 transitions with a nondeterminism of: 4.5
 Running a*b*c* Nondeterministic on string cab
 | , q0, cab_ 
 | c, q2, ab_ | c, q3, ab_ 
-String cab rejected in 1 transitions with a nondeterminism of: 1
+String cab rejected in 1 transitions with a nondeterminism of: 1.5
 
 Running a*b*c* Nondeterministic on string bbcccca
 | , q0, bbcccca_ 
