@@ -36,7 +36,7 @@ String aaa accepted in 4 transitions with a nondeterminism of: 2.25
 Running a plus on string aba
 | , q1, aba_ 
 | a, q1, ba_ | a, q2, ba_ 
-String aba rejected in 1 transitions with a nondeterminism of: 1
+String aba rejected in 1 transitions with a nondeterminism of: 1.5
 
 Running a plus on string bba
 | , q1, bba_ 
